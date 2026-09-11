@@ -1,0 +1,51 @@
+--- Page 1 ---
+ACME Corporation Limited
+Standalone Balance Sheet as at 31st March, 2024
+(All amounts in ₹ Crores, unless otherwise stated)
+
+Particulars                          31-Mar-24       31-Mar-23
+
+ASSETS
+
+Non-Current Assets
+Property, Plant and Equipment          4,521.34        4,102.78
+Intangible Assets                        187.45          203.12
+Non-Current Investments                2,340.00        1,980.50
+Loans and Advances                       412.67          389.23
+Other Non-Current Assets                 156.89          142.56
+Total Non-Current Assets               7,618.35        6,818.19
+
+Current Assets
+Inventories                            1,234.56        1,102.34
+Trade Receivables                      2,156.78        1,987.45
+Cash and Cash Equivalents                892.34          756.12
+Other Current Assets                     345.67          298.45
+Total Current Assets                   4,629.35        4,144.36
+
+Total Assets                          12,247.70       10,962.55
+
+--- Page 2 ---
+
+EQUITY AND LIABILITIES
+
+Equity
+Equity Share Capital                     500.00          500.00
+Reserves and Surplus                   6,234.56        5,467.89
+Total Shareholders' Equity             6,734.56        5,967.89
+
+Non-Current Liabilities
+Long Term Borrowings                   2,100.00        2,350.00
+Provisions                              234.56          212.34
+Other Non-Current Liabilities            189.78          167.45
+Total Non-Current Liabilities          2,524.34        2,729.79
+
+Current Liabilities
+Short Term Borrowings                    450.00          520.00
+Trade Payables                         1,567.89        1,023.45
+Other Current Liabilities                789.45          567.89
+Provisions                              181.46          153.53
+Total Current Liabilities              2,988.80        2,264.87
+
+Total Liabilities                      5,513.14        4,994.66
+
+Total Equity and Liabilities          12,247.70       10,962.55

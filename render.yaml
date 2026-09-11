@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: document-intelligence-api
+    runtime: docker
+    rootDir: Neostats
+    dockerfilePath: ./Dockerfile

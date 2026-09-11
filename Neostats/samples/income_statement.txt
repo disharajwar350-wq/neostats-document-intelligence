@@ -1,0 +1,39 @@
+--- Page 1 ---
+ACME Corporation Limited
+Statement of Profit and Loss for the year ended 31st March, 2024
+(All amounts in ₹ Crores, unless otherwise stated)
+
+Particulars                              31-Mar-24       31-Mar-23
+
+Revenue from Operations                  18,456.78      16,234.56
+Other Income                                345.67         278.90
+Total Income                             18,802.45      16,513.46
+
+Expenses
+Cost of Materials Consumed                8,234.56       7,456.78
+Employee Benefit Expense                  2,345.67       2,123.45
+Depreciation and Amortisation               567.89         523.45
+Finance Costs                               312.45         378.90
+Other Expenses                            4,567.89       4,012.34
+Total Expenses                           16,028.46      14,494.92
+
+Profit from Operations                    2,773.99       2,018.54
+
+--- Page 2 ---
+
+Profit Before Tax                         2,773.99       2,018.54
+
+Tax Expense
+Current Tax                                 698.45         512.34
+Deferred Tax                                 (45.67)        (32.10)
+Total Tax Expense                           652.78         480.24
+
+Net Profit After Tax                      2,121.21       1,538.30
+
+Other Comprehensive Income                   (12.34)         8.56
+
+Total Comprehensive Income                2,108.87       1,546.86
+
+Earnings Per Share (Face Value ₹10 each)
+Basic EPS                                   42.42          30.77
+Diluted EPS                                  41.98          30.45

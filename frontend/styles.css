@@ -1,0 +1,18 @@
+:root { font-family: system-ui, sans-serif; color: #172033; background: #f5f7fb; }
+body { margin: 0; }
+.container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+form { display: grid; gap: 16px; background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 18px #dfe4ef; }
+label { display: grid; gap: 6px; font-weight: 600; }
+input, select, button { font: inherit; padding: 10px; border: 1px solid #ccd4e2; border-radius: 8px; }
+button { cursor: pointer; background: #2563eb; color: white; border: 0; }
+.message { min-height: 24px; }
+#documents { display: grid; gap: 8px; }
+.document { display: flex; justify-content: space-between; text-align: left; background: white; color: #172033; border: 1px solid #dce2ed; }
+.document span { color: #58677f; }
+.summary { margin-top: 24px; background: white; padding: 20px; border-radius: 12px; }
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+.field { display: flex; flex-direction: column; gap: 4px; padding: 10px; background: #f5f7fb; border-radius: 8px; }
+.field span { color: #58677f; }
+li.pass { color: #15803d; }
+li.fail { color: #b91c1c; }
+pre { white-space: pre-wrap; background: #111827; color: #d1fae5; padding: 20px; border-radius: 12px; overflow: auto; }

@@ -1,0 +1,48 @@
+--- Page 1 ---
+ACME Corporation Limited
+Cash Flow Statement for the year ended 31st March, 2024
+(All amounts in ₹ Crores, unless otherwise stated)
+
+Particulars                                  31-Mar-24       31-Mar-23
+
+A. Cash Flow from Operating Activities
+
+Net Profit Before Tax                        2,773.99        2,018.54
+Adjustments for:
+Depreciation and Amortisation                  567.89          523.45
+Finance Costs                                  312.45          378.90
+Interest Income                               (123.45)        (112.34)
+Loss/(Gain) on Sale of Assets                   (8.90)          12.45
+
+Operating Profit before Working Capital       3,521.98        2,821.00
+Changes in Working Capital
+(Increase)/Decrease in Trade Receivables       (169.33)        (234.56)
+(Increase)/Decrease in Inventories             (132.22)         (89.45)
+Increase/(Decrease) in Trade Payables           544.44          178.90
+Increase/(Decrease) in Other Liabilities        221.56          123.45
+
+Cash Generated from Operations                3,986.43        2,799.34
+Income Tax Paid                               (698.45)        (512.34)
+Net Cash from Operating Activities            3,287.98        2,287.00
+
+--- Page 2 ---
+
+B. Cash Flow from Investing Activities
+
+Purchase of Fixed Assets                     (986.45)        (834.56)
+Purchase of Investments                      (359.50)        (245.00)
+Sale of Investments                            45.00           67.80
+Interest Received                             123.45          112.34
+Net Cash from Investing Activities          (1,177.50)        (899.42)
+
+C. Cash Flow from Financing Activities
+
+Proceeds from Long Term Borrowings             500.00          800.00
+Repayment of Long Term Borrowings             (750.00)        (650.00)
+Interest Paid                                 (312.45)        (378.90)
+Dividends Paid                                (411.81)        (345.67)
+Net Cash from Financing Activities          (974.26)          (574.57)
+
+Net Increase in Cash                         1,136.22          813.01
+Cash and Cash Equivalents at Beginning         756.12          (56.89)
+Cash and Cash Equivalents at End               892.34          756.12

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NeoStats — Premium financial document extraction system. Extract structured JSON from OCR text of Balance Sheets, Income Statements, and Cash Flow Statements.">
+    <meta name="keywords" content="financial extraction, OCR, balance sheet, income statement, cash flow, JSON, NeoStats">
+    <meta name="author" content="NeoStats">
+    <title>NeoStats — Financial Document Extraction</title>
+
+    <!-- Favicon (inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%2306d6a0'/><text x='50' y='68' text-anchor='middle' fill='%230a0e17' font-size='55' font-weight='bold' font-family='Inter,sans-serif'>N</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <div class="app-container">
+        <!-- ── Header ── -->
+        <header class="app-header">
+            <div class="app-logo">
+                <div class="logo-icon">N</div>
+                <span class="logo-text">NeoStats</span>
+            </div>
+            <p class="app-tagline">Financial Document Extraction Engine — Transform OCR to Structured Data</p>
+        </header>
+
+        <!-- ── Stats Bar ── -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-value" id="stat-fields">—</span>
+                <span class="stat-label">Fields Matched</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-periods">—</span>
+                <span class="stat-label">Periods Detected</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-rate">—</span>
+                <span class="stat-label">Extraction Rate</span>
+            </div>
+        </div>
+
+        <!-- ── Main Grid ── -->
+        <div class="main-grid">
+
+            <!-- ── Input Panel ── -->
+            <div class="glass-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span class="card-title-icon icon-input">📄</span>
+                        Input
+                    </h2>
+                    <div class="btn-group">
+                        <button id="clear-btn" class="btn btn-danger" title="Clear all">✗ Clear</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Document Type -->
+                    <div class="form-group">
+                        <label class="form-label" for="doc-type-select">Document Type</label>
+                        <select id="doc-type-select" class="form-select">
+                            <option value="" disabled selected>Select document type…</option>
+                            <option value="Balance Sheet">Balance Sheet</option>
+                            <option value="Income Statement">Income Statement (P&L)</option>
+                            <option value="Cash Flow Statement">Cash Flow Statement</option>
+                            <option value="Invoice">Invoice</option>
+                        </select>
+                    </div>
+
+                    <!-- Sample Buttons -->
+                    <div class="form-group">
+                        <label class="form-label">Quick Load Sample</label>
+                        <div class="sample-buttons">
+                            <button class="sample-btn" data-type="Balance Sheet">📋 Balance Sheet</button>
+                            <button class="sample-btn" data-type="Income Statement">📊 Income Statement</button>
+                            <button class="sample-btn" data-type="Cash Flow Statement">💰 Cash Flow</button>
+                        </div>
+                    </div>
+
+                    <!-- Drop Zone -->
+                    <div id="drop-zone" class="drop-zone">
+                        <div class="drop-zone-icon">📁</div>
+                        <p class="drop-zone-text">
+                            Drag & drop a PDF, JPG, PNG, or OCR text file here, or <strong>click to browse</strong>
+                        </p>
+                        <input type="file" id="file-input" accept=".pdf,.jpg,.jpeg,.png,.txt,.text,.ocr,.csv">
+                    </div>
+
+                    <!-- OCR Textarea -->
+                    <div class="form-group">
+                        <label class="form-label" for="ocr-textarea">OCR Text</label>
+                        <textarea
+                            id="ocr-textarea"
+                            class="ocr-textarea"
+                            placeholder="Paste your raw OCR text here...
+
+Example:
+--- Page 1 ---
+ACME Corporation
+Balance Sheet as at 31st March, 2024
+
+Particulars                  31-Mar-24    31-Mar-23
+Total Assets                12,247.70   10,962.55
+Total Liabilities            5,513.14    4,994.66
+Shareholders' Equity         6,734.56    5,967.89"
+                            spellcheck="false"
+                        ></textarea>
+                    </div>
+
+                    <!-- Extract Button -->
+                    <button id="extract-btn" class="btn btn-primary btn-full">
+                        ⚡ Extract Data
+                        <span class="text-muted" style="font-size: 0.75rem; font-weight: 400; margin-left: 8px;">Ctrl+Enter</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ── Output Panel ── -->
+            <div class="glass-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span class="card-title-icon icon-output">📊</span>
+                        Output
+                    </h2>
+                    <div class="btn-group">
+                        <button id="copy-btn" class="btn btn-secondary" title="Copy JSON">📋 Copy</button>
+                        <button id="download-json-btn" class="btn btn-secondary" title="Download JSON">⬇ JSON</button>
+                        <button id="download-csv-btn" class="btn btn-secondary" title="Download CSV">⬇ CSV</button>
+                    </div>
+                </div>
+                <div class="card-body" style="position: relative;">
+                    <!-- Validation Bar -->
+                    <div id="validation-bar" class="validation-bar" style="display: none;"></div>
+                    <div id="validation-details" class="validation-details"></div>
+
+                    <!-- Tabs -->
+                    <div class="tabs">
+                        <button id="tab-json" class="tab active">JSON Output</button>
+                        <button id="tab-table" class="tab">Line Items</button>
+                    </div>
+
+                    <!-- Tab: JSON -->
+                    <div id="content-json" class="tab-content active">
+                        <div id="json-output" class="json-output">
+                            <div class="placeholder-state">
+                                <div class="placeholder-icon">📊</div>
+                                <div class="placeholder-title">Ready to Extract</div>
+                                <div class="placeholder-text">
+                                    Upload a financial document or paste OCR text, select a document type, and click Extract.
+                                </div>
+                            </div>
+
+                            <section class="glass-card history-card">
+                                <div class="card-header">
+                                    <h2 class="card-title"><span class="card-title-icon icon-output">🗂️</span> Processing History</h2>
+                                    <button id="refresh-history-btn" class="btn btn-secondary">↻ Refresh</button>
+                                </div>
+                                <div class="card-body">
+                                    <div id="history-list" class="history-list">
+                                        <p class="text-muted">Loading processed documents…</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Line Items Table -->
+                    <div id="content-table" class="tab-content">
+                        <div class="json-output" style="overflow: auto;">
+                            <table class="line-items-table">
+                                <thead>
+                                    <tr>
+                                        <th>Label</th>
+                                        <th>Section</th>
+                                        <th>Matched Field</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="line-items-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Processing Overlay -->
+                    <div id="processing-overlay" class="processing-overlay">
+                        <div class="spinner"></div>
+                        <div class="processing-text">Extracting financial data…</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ── Footer ── -->
+        <footer class="app-footer">
+            <p>NeoStats — Financial Document Extraction Engine</p>
+            <p>Built with pure HTML, CSS & JavaScript • No API keys required</p>
+        </footer>
+    </div>
+
+    <!-- Scripts (order matters: dependencies first) -->
+    <script src="js/normalizer.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/schemas.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/extractor.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
