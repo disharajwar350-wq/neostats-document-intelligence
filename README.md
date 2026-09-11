@@ -14,8 +14,8 @@ Separate implementation for the AI Engineer Internship case study. The original 
 - Invoice, balance-sheet, profit-and-loss, and cash-flow reconciliation checks with `NOT_APPLICABLE` when required inputs are missing.
 - Unit and API tests for validation, extraction flow, persistence, and controlled invalid-file errors.
 
-The active implementation is in [`Neostats/`](./Neostats/). The older root-level
-`backend/` directory is retained as historical work and is not the deployment target.
+The active implementation is in [`Neostats/`](./Neostats/). The deployed service
+uses this directory as its Docker root.
 
 ## Local setup
 
@@ -31,8 +31,15 @@ Open `http://127.0.0.1:8000` for the dashboard and `http://127.0.0.1:8000/docs` 
 
 ## Render deployment
 
-The included [render.yaml](./render.yaml) deploys the active `Neostats` FastAPI API
-and static frontend as one web service.
+The deployed application is available at:
+
+- Frontend: https://neostats-document-intelligence-1.onrender.com/
+- Backend API: https://neostats-document-intelligence-1.onrender.com/api/v1
+- Swagger/OpenAPI: https://neostats-document-intelligence-1.onrender.com/docs
+- Health: https://neostats-document-intelligence-1.onrender.com/api/v1/health
+
+The included [render.yaml](./render.yaml) targets the active `Neostats` FastAPI
+API and static frontend as one Docker web service.
 
 ## API
 
@@ -41,10 +48,10 @@ and static frontend as one web service.
 - `GET /api/v1/documents/{document_name}`
 - `GET /api/v1/health`
 
-## Remaining production/submission work
+## Submission contents
 
-The local implementation, supplied-dataset verification, automated tests, and
-presentation are complete. External submission work remains: publish a public
-GitHub repository, deploy the service, configure persistent production storage and
-Tesseract, verify OCR in the hosted environment, and replace the pending URL
-placeholders in [`Neostats/README.md`](./Neostats/README.md).
+The repository contains the active application, automated tests, sample structured
+output, environment template, Docker deployment configuration, and the mandatory
+presentation. The public repository URL is:
+
+https://github.com/disharajwar350-wq/neostats-document-intelligence

@@ -241,17 +241,16 @@ and validation variances remain visible in the results.
 
 ### Submission status
 
-The local implementation and presentation are complete and verified. The following
-deliverables still require external account access: a public GitHub repository, live
-frontend/API deployment, deployed Swagger and health URLs, and production
-database/OCR verification. Do not replace these placeholders with invented URLs:
+The application has been deployed and verified with a live balance-sheet PDF
+processing request. The public submission links are:
 
 | Deliverable | URL |
 |---|---|
-| Public GitHub repository | Pending publication |
-| Frontend | Pending deployment |
-| Backend API | Pending deployment |
-| Swagger/OpenAPI | Pending deployment |
+| Public GitHub repository | https://github.com/disharajwar350-wq/neostats-document-intelligence |
+| Frontend | https://neostats-document-intelligence-1.onrender.com/ |
+| Backend API | https://neostats-document-intelligence-1.onrender.com/api/v1 |
+| Swagger/OpenAPI | https://neostats-document-intelligence-1.onrender.com/docs |
+| Health | https://neostats-document-intelligence-1.onrender.com/api/v1/health |
 
 ### AI/tool usage disclosure
 

@@ -22,13 +22,14 @@ This checklist maps the internship case-study requirements to the implementation
 - Architecture and processing flow: architecture slide in the submission PPTX.
 - AI/tool usage disclosure is included in `README.md`.
 
-## Remaining submission actions outside local implementation
+## Public submission links
 
-- Deploy the Docker image or application to a public free-tier platform.
-- Install/configure Tesseract on the hosting platform and verify the deployed OCR flow.
-- Push the project to a public GitHub repository.
-- Fill the deployed frontend, API, Swagger, and repository URLs in the README.
-- Submit `Neostats_Document_Intelligence_Presentation.pptx` with the repository.
+- Repository: https://github.com/disharajwar350-wq/neostats-document-intelligence
+- Frontend: https://neostats-document-intelligence-1.onrender.com/
+- Backend API: https://neostats-document-intelligence-1.onrender.com/api/v1
+- Swagger: https://neostats-document-intelligence-1.onrender.com/docs
+- Health: https://neostats-document-intelligence-1.onrender.com/api/v1/health
+- Presentation: `Neostats_Document_Intelligence_Presentation.pptx`
 
 ## Known non-blocking limitations
 
