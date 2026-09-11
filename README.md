@@ -1,7 +1,5 @@
 # Document Intelligence Assignment
 
-Separate implementation for the AI Engineer Internship case study. The original CloudApp project is intentionally not modified.
-
 ## Current scope
 
 - FastAPI REST API with Swagger at `/docs`.
