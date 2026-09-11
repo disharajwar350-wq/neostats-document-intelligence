@@ -232,7 +232,13 @@ const App = (() => {
                     method: 'POST',
                     body: formData
                 });
-                const payload = await response.json();
+                const responseText = await response.text();
+                let payload;
+                try {
+                    payload = responseText ? JSON.parse(responseText) : {};
+                } catch {
+                    throw new Error(`Backend returned an invalid response (HTTP ${response.status})`);
+                }
                 if (!response.ok) {
                     throw new Error(payload.error?.message || payload.detail || 'Backend processing failed');
                 }
